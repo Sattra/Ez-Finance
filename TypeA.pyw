@@ -21,7 +21,7 @@ def calculate(gui, interest, year, money, check):
         answer = str(tb.table_2(interest, year, money))
     #select table
 
-    mrefresh = Label(gui, text='                             ')
+    mrefresh = Label(gui, text='              -               ')
     mlebel = Label(gui, text=answer)
     mlebel1 = Label(gui, text='Answer')
     mrefresh.place(relx=.6, rely=.8, anchor="c")
