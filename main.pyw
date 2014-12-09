@@ -7,26 +7,26 @@ def call_a():
     call_a(...)
         Open Type A in new window
     '''
-    os.system('TypeA.pyw')
+    os.startfile('TypeA.pyw')
 
 def call_b():
     '''
     call_b(...)
         Open Type B in new window
     '''
-    os.system('TypeB.pyw')
+    os.startfile('TypeB.pyw')
 def call_help():
     '''
     call_help(...)
         Open Help in new window
     '''
-    os.system('Help_Ez.txt')
+    os.startfile('Help_Ez.txt')
 def call_about_us():
     '''
     call_about_us(...)
         Open About us in new window
     '''
-    os.system('About_us.txt')
+    os.startfile('About_us.txt')
 
 class main():
     '''
@@ -36,7 +36,8 @@ class main():
         self = Tk()
         self.geometry('300x250+500+250')
         self.title('Ez-Finance')
-        self.configure(background = 'pink')
+        img = PhotoImage(file='pic1.gif')
+        background_label = Label(self, image=img).pack()
         menubar = Menu(self)
         helpmenu = Menu(menubar, tearoff=0)
         helpmenu.add_command(label="Help", command=call_help)

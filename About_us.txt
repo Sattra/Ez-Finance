@@ -1,5 +1,4 @@
-Editor : Watthakorn Malikow 57070106 sec3 (I'm top genius in the world)
-	 Sattra Tansuphasiri 57070111 sec3 (I love Illya)
+Editor : Watthakorn Malikow 57070106 sec3
+	 Sattra Tansuphasiri 57070111 sec3
 
 Github : https://github.com/Sattra/Ez-Finance.git
-
