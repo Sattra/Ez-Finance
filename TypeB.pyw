@@ -77,6 +77,7 @@ class typeb():
 
         h = Button(self, text="How to use?", command=call_help)
         h.place(relx=.15, rely=.9, anchor="c")
+        #how to use
         
         c = Button(self, text="close", command=self.destroy)
         c.place(relx=.9, rely=.9, anchor="c")
