@@ -1,4 +1,7 @@
 def table_1(interest, year, money):
+    '''
+    return calculate future value one pack
+    '''
     money = int(money)
     n = int(year)
     k = (float(interest))/100
@@ -6,6 +9,9 @@ def table_1(interest, year, money):
     return values
 
 def table_2(interest, year, money):
+    '''
+    return calculate future value muti pack
+    '''
     money = int(money)
     n = int(year)
     k = (float(interest))/100
@@ -13,6 +19,9 @@ def table_2(interest, year, money):
     return values
 
 def table_3(interest, year, money):
+    '''
+    return calculate present value one pack
+    '''
     money = int(money)
     n = int(year)
     k = (float(interest))/100
@@ -20,6 +29,9 @@ def table_3(interest, year, money):
     return values
 
 def table_4(interest, year, money):
+    '''
+    return calculate present value muti pack
+    '''
     money = int(money)
     n = int(year)
     k = (float(interest))/100
