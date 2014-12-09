@@ -1,15 +1,23 @@
-def tablea_1(k, n, money):
-    values = (1+k)**n
-    return values*money
-
-def table_2(k, n, money):
-    values = (((1+k)**n)-1)/k
-    return values*money
-
-def table_3(k, n):
-    values = 1/((1+k)**n)
+def tablea_1(interest, year, money):
+    n = int(year)
+    k = float(interest)
+    values = ((1+k)**n)*money
     return values
 
-def table_4(k, n, money):
-    values = (1-(1/((1+k)**n)))/k
-    return values*money
+def table_2(interest, year, money):
+    n = int(year)
+    k = float(interest)
+    values = ((((1+k)**n)-1)/k)*money
+    return values
+
+def table_3(interest, year, money):
+    n = int(year)
+    k = float(interest)
+    values = (1/((1+k)**n))*money
+    return values
+
+def table_4(interest, year, money):
+    n = int(year)
+    k = float(interest)
+    values = ((1-(1/((1+k)**n)))/k)*money
+    return values
