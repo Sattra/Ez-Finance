@@ -1,4 +1,4 @@
-def tablea_1(interest, year, money):
+def table_1(interest, year, money):
     n = int(year)
     k = float(interest)
     values = ((1+k)**n)*money
@@ -21,3 +21,4 @@ def table_4(interest, year, money):
     k = float(interest)
     values = ((1-(1/((1+k)**n)))/k)*money
     return values
+
