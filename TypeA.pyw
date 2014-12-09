@@ -1,7 +1,13 @@
 '''Present type of application'''
-import sys
+import sys, os
 from Tkinter import *
 import table1to4 as tb
+
+def call_help():
+    '''
+    how to use program.txt
+    '''
+    os.system('help_typeA.txt')
 
 def calculate(gui, interest, year, money, check):
     '''
@@ -37,6 +43,10 @@ class typea():
         check = IntVar()
         #make varable keeper
 
+        img = PhotoImage(file="Now_to_Future.gif")
+        imglabel = Label(self, image=img)
+        imglabel.place(relx=.5, rely=.14, anchor="c")
+
         Radiobutton(self, text="one time",
                     variable=check, value=0).place(relx=.34,rely=.38, anchor="c")
         Radiobutton(self, text="every years",
@@ -63,6 +73,9 @@ class typea():
                     command=lambda: calculate(self, interest.get(), year.get(), money.get(), check.get()))
         ok.place(relx=.5, rely=.7, anchor="c")
         #make OK button to sent varable to calculate fuction
+
+        h = Button(self, text="How to use?", command=call_help)
+        h.place(relx=.15, rely=.9, anchor="c")
         
         c = Button(self, text="close", command=self.destroy)
         c.place(relx=.9, rely=.9, anchor="c")

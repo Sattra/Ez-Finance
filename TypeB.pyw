@@ -1,7 +1,13 @@
 '''Future type of application'''
-import sys
+import sys, os
 from Tkinter import *
 import table1to4 as tb
+
+def call_help():
+    '''
+    how to use program.txt
+    '''
+    os.system('help_typeB.txt')
 
 def calculate(gui, interest, year, money, check):
     '''
@@ -37,9 +43,14 @@ class typeb():
         check = IntVar()
         #make varable keeper
 
+        img = PhotoImage(file="Future.gif")
+        imglabel = Label(self, image=img)
+        imglabel.place(relx=.5, rely=.14, anchor="c")
+        #image
+
         Radiobutton(self, text="one time",
                     variable=check, value=0).place(relx=.34,rely=.38, anchor="c")
-        Radiobutton(self, text="every years",
+        Radiobutton(self, text="time",
                     variable=check, value=1).place(relx=.6, rely=.38, anchor="c")
         #Select Radiobutton to choose type of Future money
             
@@ -53,7 +64,7 @@ class typeb():
 
         label1 = Label(self, text='Money      : ')
         label2 = Label(self, text='Interest   : ')
-        label3 = Label(self, text='Year       : ')
+        label3 = Label(self, text='Year/Time  : ')
         label1.place(relx=.3, rely=.3, anchor="c")
         label2.place(relx=.3, rely=.5, anchor="c")
         label3.place(relx=.3, rely=.6, anchor="c")
@@ -63,6 +74,9 @@ class typeb():
                     command=lambda: calculate(self, interest.get(), year.get(), money.get(), check.get()))
         ok.place(relx=.5, rely=.7, anchor="c")
         #make OK button to sent varable to calculate fuction
+
+        h = Button(self, text="How to use?", command=call_help)
+        h.place(relx=.15, rely=.9, anchor="c")
         
         c = Button(self, text="close", command=self.destroy)
         c.place(relx=.9, rely=.9, anchor="c")
