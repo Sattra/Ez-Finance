@@ -13,5 +13,3 @@ def table_3(k, n):
 def table_4(k, n, money):
     values = (1-(1/((1+k)**n)))/k
     return values*money
-
-aaa
