@@ -1,4 +1,4 @@
-'''Present type of application'''
+'''Future type of application'''
 import sys
 from Tkinter import *
 import table1to4 as tb
