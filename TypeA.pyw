@@ -7,7 +7,7 @@ def call_help():
     '''
     how to use program.txt
     '''
-    os.system('help_typeA.txt')
+    os.startfile('help_typeA.txt')
 
 def calculate(gui, interest, year, money, check):
     '''
