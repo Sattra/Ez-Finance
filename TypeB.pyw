@@ -1,36 +1,54 @@
 import sys
 from Tkinter import *
+import table1to4 as tb
 
-def okk():
-    mtext = money.get()
-    mlebel = Label(agui, text=mtext)
-    mlebel.place(relx=.5, rely=.7, anchor="c")
-
-agui = Tk()
-money = StringVar()
-interest = StringVar()
-year = StringVar()
-
-agui.geometry('400x400+600+300')
-agui.title('TypeB')
-c = Button(agui, text="close", command=agui.destroy)
-c.place(relx=.9, rely=.9, anchor="c")
-
-label1 = Label(agui, text='Money      : ')
-label1.place(relx=.3, rely=.3, anchor="c")
-label2 = Label(agui, text='Interest   : ')
-label2.place(relx=.3, rely=.4, anchor="c")
-label3 = Label(agui, text='Year       : ')
-label3.place(relx=.3, rely=.5, anchor="c")
+def calculate(gui, interest, year, money, check):
+    if check == 0:
+        answer = str(tb.table_3(interest, year, money))
+    else:
+        answer = str(tb.table_4(interest, year, money))
+    mrefesh = Label(gui, text='                             ').place(relx=.6, rely=.8, anchor="c")
+    mlebel = Label(gui, text=answer)
+    mlebel1 = Label(gui, text='Answer')
+    mlebel.place(relx=.6, rely=.8, anchor="c")
+    mlebel1.place(relx=.3, rely=.8, anchor="c")
     
-va1 = Entry(agui,textvariable=money)
-va1.place(relx=.6, rely=.3, anchor="c")
-va2 = Entry(agui,textvariable=interest)
-va2.place(relx=.6, rely=.4, anchor="c")
-va3 = Entry(agui,textvariable=year)
-va3.place(relx=.6, rely=.5, anchor="c")
-    
-ok = Button(agui, text="OK", command=okk)
-ok.place(relx=.5, rely=.6, anchor="c")
+class typea():
+    '''type a'''
+    def __init__(self):
+        '''typea'''        
+        self = Tk()
+        self.geometry('400x400+600+300')
+        self.title('Future')
+        money = StringVar()
+        interest = StringVar()
+        year = StringVar()
+        check = IntVar()
 
-mainloop()
+        Radiobutton(self, text="one time",
+                    variable=check, value=0).place(relx=.34,rely=.38, anchor="c")
+        Radiobutton(self, text="every years",
+                    variable=check, value=1).place(relx=.6, rely=.38, anchor="c")
+        c = Button(self, text="close", command=self.destroy)
+        c.place(relx=.9, rely=.9, anchor="c")
+
+        label1 = Label(self, text='Money      : ')
+        label2 = Label(self, text='Interest   : ')
+        label3 = Label(self, text='Year       : ')
+        label1.place(relx=.3, rely=.3, anchor="c")
+        label2.place(relx=.3, rely=.5, anchor="c")
+        label3.place(relx=.3, rely=.6, anchor="c")
+            
+        entry1 = Entry(self, textvariable=money)
+        entry2 = Entry(self, textvariable=interest)
+        entry3 = Entry(self, textvariable=year)
+        entry1.place(relx=.6, rely=.3, anchor="c")
+        entry2.place(relx=.6, rely=.5, anchor="c")
+        entry3.place(relx=.6, rely=.6, anchor="c")
+        
+        ok = Button(self, text="OK",
+                    command=lambda: calculate(self, interest.get(), year.get(), money.get(), check.get()))
+        ok.place(relx=.5, rely=.7, anchor="c")
+
+        self.mainloop()
+typea()
